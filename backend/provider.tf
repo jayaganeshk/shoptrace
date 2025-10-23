@@ -19,5 +19,5 @@ provider "aws" {
 
 provider "honeycombio" {
   # API key should be set via HONEYCOMB_API_KEY environment variable
-  api_key = "ZGjqRLxwF6y9VOnkKBP80B"
+  api_key = "HONEYCOMB_API_KEY"
 }
