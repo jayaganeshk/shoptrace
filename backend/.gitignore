@@ -1,0 +1,22 @@
+# Terraform files
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+!terraform.tfvars.example
+.terraform.lock.hcl
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+builds/
+
+# Lambda zip files
+*.zip
+
+# Copied Lambda code (copied from backend)
+# Uncomment if you want to exclude these
+# functions/
+# layers/
