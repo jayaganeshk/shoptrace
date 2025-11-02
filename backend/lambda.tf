@@ -10,15 +10,15 @@ locals {
     OPENTELEMETRY_COLLECTOR_CONFIG_URI = var.collector_config_s3_uri
     AWS_LAMBDA_EXEC_WRAPPER            = "/opt/otel-instrument"
     OTEL_PROPAGATORS                   = "tracecontext,xray"
-    OTEL_SERVICE_NAME                  = "order-processing-service"
+    OTEL_SERVICE_NAME                  = var.honeycomb_dataset
   }
   layers = [
     "arn:aws:lambda:${local.region}:901920570463:layer:aws-otel-python-amd64-ver-1-32-0:2",
     module.honeycomb_layer.lambda_layer_arn,
     module.chaos_layer.lambda_layer_arn
   ]
-  publish_lambda_version = true
-  enable_snap_start      = true
+  publish_lambda_version = false
+  enable_snap_start      = false // This will incur additional cost; enable only if needed
 }
 
 module "create_order_lambda" {

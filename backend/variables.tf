@@ -22,5 +22,5 @@ variable "collector_config_s3_uri" {
 variable "honeycomb_dataset" {
   description = "Honeycomb dataset name"
   type        = string
-  default     = "order-processing-service"
+  default     = "shop-trace"
 }

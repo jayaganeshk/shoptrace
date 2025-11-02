@@ -5,7 +5,7 @@ import { trace } from '@opentelemetry/api'
 export function initTelemetry() {
   const sdk = new HoneycombWebSDK({
     apiKey: import.meta.env.VITE_HONEYCOMB_API_KEY,
-    serviceName: 'order-processing-service',
+    serviceName: 'shop-trace',
     instrumentations: [
       getWebAutoInstrumentations({
         '@opentelemetry/instrumentation-fetch': {
@@ -22,4 +22,4 @@ export function initTelemetry() {
   sdk.start()
 }
 
-export const tracer = trace.getTracer('order-processing-service')
+export const tracer = trace.getTracer('shop-trace')
